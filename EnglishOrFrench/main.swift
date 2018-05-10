@@ -8,6 +8,37 @@ import Foundation
 // INPUT
 // Collect and filter user input here
 
+var lines = 0
+
+while 1 == 1 {
+    
+    print("How many lines?")
+    
+    // No nil
+    guard let givenInput = readLine() else {
+        continue
+    }
+    
+    // Make a string
+    guard let givenLines = Int(givenInput) else {
+        continue
+    }
+    
+    // Set limits
+    if givenLines < 0 || givenLines > 10000 {
+        continue
+    }
+    
+    lines = givenLines
+    break
+}
+
+while 2 == 2 {
+    
+    print("hi")
+    
+}
+
 // PROCESS
 // Implement the primary logic of the problem here
 // Some output may be given here if you desire
