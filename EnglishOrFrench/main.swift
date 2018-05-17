@@ -33,11 +33,33 @@ while 1 == 1 {
     break
 }
 
-while 2 == 2 {
+var frenchCharacterCount = 0
+var englishCharacterCount = 0
+
+print("Please enter the \(lines) lines of text:")
     
-    print("hi")
-    
+for _ in 1...lines {
+        
+    guard let givenLine = readLine() else {
+            
+        continue
+            
+    }
+    for letter in givenLine {
+            
+        switch letter {
+        case "S", "s":
+            frenchCharacterCount += 1
+        case "T", "t":
+            englishCharacterCount += 1
+        default:
+            continue
+        }
+            
+    }
+        
 }
+
 
 // PROCESS
 // Implement the primary logic of the problem here
@@ -63,4 +85,8 @@ for _ in 1...expectedLines {
 // OUTPUT
 // Report results to the user here
 
-
+if englishCharacterCount > frenchCharacterCount {
+    print("It's probably English text")
+} else {
+    print("It's probably French Text")
+}
